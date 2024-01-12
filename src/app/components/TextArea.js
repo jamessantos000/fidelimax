@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const TextArea = ({ text, placeholder, additionalStyles, additionalClass }) => {
+const TextArea = ({ text, placeholder, additionalStyles, additionalClass, onChange }) => {
   return (
     <textarea
       type="textfield"
@@ -13,6 +13,7 @@ const TextArea = ({ text, placeholder, additionalStyles, additionalClass }) => {
         ...additionalStyles,
       }}
       className={additionalClass}
+      onChange={onChange}
     />
   );
 };
@@ -22,6 +23,7 @@ TextArea.propTypes = {
   placeholder: PropTypes.string.isRequired,
   additionalStyles: PropTypes.object,
   additionalClass: PropTypes.string,
+  onChange: PropTypes.func.isRequired
 };
 
 export default TextArea;
