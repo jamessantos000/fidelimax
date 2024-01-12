@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 const Select = ({
   value,
+  ask,
   onChange,
   options,
   additionalClass,
@@ -15,9 +16,12 @@ const Select = ({
       className={additionalClass}
       style={additionalStyles}
     >
+      <option key="demo" value="" hidden>
+        {ask}
+      </option>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
-          {option.label}
+          {option.description}
         </option>
       ))}
     </select>
@@ -26,11 +30,13 @@ const Select = ({
 
 Select.propTypes = {
   value: PropTypes.string,
+  ask: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-      label: PropTypes.string.isRequired,
+      value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+        .isRequired,
+      description: PropTypes.string.isRequired,
     })
   ).isRequired,
   additionalClass: PropTypes.string,
