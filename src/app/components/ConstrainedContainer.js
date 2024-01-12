@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const ConstrainedContainer = ({ children }) => {
   return (
-    <div className="min-h-screen flex bg-gray-100">
+    <div className="min-h-screen flex" style={{ backgroundColor: "#F2F4F8" }}>
       <div className="w-full">{children}</div>
     </div>
   );
