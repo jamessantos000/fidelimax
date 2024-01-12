@@ -13,7 +13,7 @@ const AskText = ({ ask, reply, onChange }) => {
   return (
     <Grid additionalClass="px-8 gap-4">
       <Grid additionalClass="gap-2.5">
-        <Text fontWeight={600} fontSize={24} additionalClass="text-d-blue">
+        <Text fontWeight={500} fontSize={16} additionalClass="text-d-blue">
           {ask}
         </Text>
       </Grid>
