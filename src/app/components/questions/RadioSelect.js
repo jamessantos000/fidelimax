@@ -14,7 +14,7 @@ const AskRadioSelect = ({ ask, reply, onChange }) => {
   return (
     <Grid additionalClass="px-8 gap-4" additionalStyles={{ color: "black" }}>
       <Grid additionalClass="gap-2.5">
-        <Text color="#19202D" fontWeight={600} fontSize={24}>
+        <Text color="#19202D" fontWeight={500} fontSize={16}>
           {ask}
         </Text>
       </Grid>
