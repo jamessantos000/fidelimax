@@ -12,14 +12,10 @@ const AskSelect = ({ ask, reply, option, onChange }) => {
 
   return (
     <Grid additionalClass="px-8 gap-4 text-d-blue-secondary">
-      <Grid additionalClass="gap-2.5">
-        <Text fontWeight={600} fontSize={24} additionalClass="text-d-blue">
-          {ask}
-        </Text>
-      </Grid>
       <Flex additionalClass="justify-between text-center">
         <Select
           value={reply}
+          ask={ask}
           onChange={handleReplyChange}
           additionalClass="w-full h-14 rounded-lg p-4 bg-white"
           additionalStyles={{ border: "1px solid #ACB1BA" }}
