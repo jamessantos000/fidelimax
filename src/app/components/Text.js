@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Text = ({ children, color, fontSize, fontWeight, additionalStyles, additionalClass }) => {
-  return <span style={{ color, fontSize, fontWeight, ...additionalStyles }} className={additionalClass}>{children}</span>;
+const Text = ({ children, fontSize, fontWeight, additionalStyles, additionalClass }) => {
+  return <span style={{ fontSize, fontWeight, fontFamily: 'Poppins, sans-serif', ...additionalStyles }} className={additionalClass}>{children}</span>;
 };
 
 Text.propTypes = {
   children: PropTypes.node.isRequired,
-  color: PropTypes.string.isRequired,
   fontSize: PropTypes.number,
-  fontWeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  fontWeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   additionalStyles: PropTypes.string,
   additionalClass: PropTypes.string
 };
