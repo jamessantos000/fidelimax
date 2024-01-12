@@ -25,3 +25,38 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.rounded-500{
+  border-radius: 500px
+}
+
+.pz-check input{
+  display: none
+}
+
+.pz-check input + label::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  box-sizing: border-box;
+  border: 2px solid #333E4F;
+  display: grid;
+  border-radius: 50%;
+  vertical-align: middle;
+  gap: 10px;
+}
+
+.pz-check input:checked + label::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  box-sizing: border-box;
+  border: 5px solid #333E4F;
+  display: grid;
+  border-radius: 50%;
+  vertical-align: middle;
+  gap: 10px;
+  background-color: white
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
