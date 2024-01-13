@@ -10,7 +10,7 @@ const Radio = ({ name, value, id, checked, onChange }) => {
 Radio.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   checked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
