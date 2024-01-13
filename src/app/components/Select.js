@@ -9,9 +9,12 @@ const Select = ({
   additionalClass,
   additionalStyles,
 }) => {
+
+  const sanitizedValue = value === null ? "" : value;
+
   return (
     <select
-      value={value}
+      value={sanitizedValue}
       onChange={onChange}
       className={additionalClass}
       style={additionalStyles}
