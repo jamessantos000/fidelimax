@@ -20,24 +20,24 @@ const AskRadioSelect = ({ ask, reply, onChange }) => {
       </Grid>
       <Flex additionalClass="pz-check gap-4 text-center">
         <Radio
-          id={0}
+          id='YesOrNo-0'
           name="YesOrNo"
           value={0}
           checked={reply === 0}
           onChange={handleReplyChange}
         />
-        <Label htmlFor={0} additionalClass="gap-2 flex items-center">
+        <Label htmlFor='YesOrNo-0' additionalClass="gap-2 flex items-center">
           <Text fontWeight={500} fontSize={14} additionalClass="text-d-blue-secondary">Sim</Text>
         </Label>
 
         <Radio
-          id={1}
+          id='YesOrNo-1'
           name="YesOrNo"
           value={1}
           checked={reply === 1}
           onChange={handleReplyChange}
         />
-        <Label htmlFor={1} additionalClass="gap-2 flex items-center">
+        <Label htmlFor='YesOrNo-1' additionalClass="gap-2 flex items-center">
           <Text fontWeight={500} fontSize={14} additionalClass="text-d-blue-secondary">Não</Text>
         </Label>
       </Flex>
