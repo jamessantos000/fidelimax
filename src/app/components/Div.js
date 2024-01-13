@@ -12,7 +12,7 @@ const Div = ({ children, additionalClass, additionalStyles }) => {
 Div.propTypes = {
   children: PropTypes.node.isRequired,
   additionalClass: PropTypes.string,
-  additionalStyles: PropTypes.string,
+  additionalStyles: PropTypes.object,
 };
 
 export default Div;
