@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const TextArea = ({ text, placeholder, additionalStyles, additionalClass, onChange }) => {
+const TextArea = ({ value, placeholder, additionalStyles, additionalClass, onChange }) => {
   return (
     <textarea
       type="textfield"
-      value={text}
+      value={value}
       placeholder={placeholder}
       style={{
         border: "1px solid #ACB1BA",
@@ -14,12 +14,14 @@ const TextArea = ({ text, placeholder, additionalStyles, additionalClass, onChan
       }}
       className={additionalClass}
       onChange={onChange}
-    />
+    >
+      {value}
+    </textarea>
   );
 };
 
 TextArea.propTypes = {
-  text: PropTypes.string,
+  value: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   additionalStyles: PropTypes.object,
   additionalClass: PropTypes.string,
