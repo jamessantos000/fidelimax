@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { HiOutlineCheckCircle } from "react-icons/hi";
 import { BiSolidError } from "react-icons/bi";
 
-const Alert = ({ type, message }) => {
+const Alert = ({ type, message, closeAlert }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   const hideTimeout = 4000;
@@ -11,6 +11,7 @@ const Alert = ({ type, message }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsVisible(false);
+      closeAlert()
     }, hideTimeout);
 
     return () => clearTimeout(timeoutId);
@@ -20,7 +21,7 @@ const Alert = ({ type, message }) => {
     <>
       {isVisible && (
         <div
-          className={`fixed w-full ${
+          className={`w-full ${
             type === "error" ? "bg-red-500" : "bg-green-100"
           } border-l-4 border-green-500 text-green-700 p-4 mt-4`}
         >
@@ -60,6 +61,7 @@ const Alert = ({ type, message }) => {
 Alert.propTypes = {
   type: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
+  closeAlert: PropTypes.func
 };
 
 export default Alert;
