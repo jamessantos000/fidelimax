@@ -5,7 +5,7 @@ import Grid from "../Grid";
 import Flex from "../Flex";
 import Select from "../Select";
 
-const AskSelect = ({ ask, reply, option, onChange }) => {
+const AskSelect = ({ ask, reply, option, mandatory, error, onChange }) => {
   const handleReplyChange = (reply) => {
     onChange(reply.target.value);
   };
@@ -22,6 +22,11 @@ const AskSelect = ({ ask, reply, option, onChange }) => {
           options={option}
         />
       </Flex>
+      {mandatory && error && (
+        <Text additionalClass="text-red-500" fontSize={12}>
+          Obrigatório
+        </Text>
+      )}
     </Grid>
   );
 };
@@ -30,6 +35,8 @@ AskSelect.propTypes = {
   ask: PropTypes.string.isRequired,
   reply: PropTypes.number,
   option: PropTypes.array,
+  mandatory: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

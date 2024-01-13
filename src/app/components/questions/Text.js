@@ -5,7 +5,7 @@ import Grid from "../Grid";
 import Flex from "../Flex";
 import TextArea from "../TextArea";
 
-const AskText = ({ ask, reply, onChange }) => {
+const AskText = ({ ask, reply, mandatory, error, onChange }) => {
   const handleReplyChange = (reply) => {
     onChange(reply.target.value);
   };
@@ -25,6 +25,11 @@ const AskText = ({ ask, reply, onChange }) => {
           onChange={handleReplyChange}
         />
       </Flex>
+      {mandatory && error && (
+        <Text additionalClass="text-red-500" fontSize={12}>
+          Obrigatório
+        </Text>
+      )}
     </Grid>
   );
 };
@@ -32,6 +37,8 @@ const AskText = ({ ask, reply, onChange }) => {
 AskText.propTypes = {
   ask: PropTypes.string.isRequired,
   reply: PropTypes.string,
+  mandatory: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

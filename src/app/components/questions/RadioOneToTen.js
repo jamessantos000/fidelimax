@@ -7,7 +7,7 @@ import Radio from "../Radio";
 import Label from "../Label";
 import Div from "../Div";
 
-const AskRadioOneToTen = ({ ask, reply, onChange }) => {
+const AskRadioOneToTen = ({ ask, reply, mandatory, error, onChange }) => {
   const maxReply = 10;
 
   const handleReplyChange = (reply) => {
@@ -40,6 +40,11 @@ const AskRadioOneToTen = ({ ask, reply, onChange }) => {
           </Div>
         ))}
       </Flex>
+      {mandatory && error && (
+        <Text additionalClass="text-red-500" fontSize={12}>
+          Obrigatório
+        </Text>
+      )}
     </Grid>
   );
 };
@@ -47,6 +52,8 @@ const AskRadioOneToTen = ({ ask, reply, onChange }) => {
 AskRadioOneToTen.propTypes = {
   ask: PropTypes.string.isRequired,
   reply: PropTypes.number,
+  mandatory: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

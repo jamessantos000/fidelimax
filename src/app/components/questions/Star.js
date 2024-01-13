@@ -5,7 +5,7 @@ import Grid from "../Grid";
 import Flex from "../Flex";
 import StarIcon from "../Star";
 
-const AskStar = ({ ask, reply, onChange }) => {
+const AskStar = ({ ask, reply, mandatory, error, onChange }) => {
   const maxReply = 5;
 
   const handleReplyChange = (reply) => {
@@ -31,11 +31,16 @@ const AskStar = ({ ask, reply, onChange }) => {
           <StarIcon
             key={index}
             star={index}
-            fill={index + 1 <= reply ? '#FFAE00' : '#ACB1BA'}
+            fill={index + 1 <= reply ? "#FFAE00" : "#ACB1BA"}
             onChange={handleReplyChange}
           />
         ))}
       </Flex>
+      {mandatory && error && (
+        <Text additionalClass="text-red-500" fontSize={12}>
+          Obrigatório
+        </Text>
+      )}
     </Grid>
   );
 };
@@ -43,6 +48,8 @@ const AskStar = ({ ask, reply, onChange }) => {
 AskStar.propTypes = {
   ask: PropTypes.string.isRequired,
   reply: PropTypes.number,
+  mandatory: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

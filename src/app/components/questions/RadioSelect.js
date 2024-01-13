@@ -6,7 +6,7 @@ import Flex from "../Flex";
 import Radio from "../Radio";
 import Label from "../Label";
 
-const AskRadioSelect = ({ ask, reply, onChange }) => {
+const AskRadioSelect = ({ ask, reply, mandatory, error, onChange }) => {
   const handleReplyChange = (selectedRating) => {
     onChange(selectedRating.target.value);
   };
@@ -41,6 +41,11 @@ const AskRadioSelect = ({ ask, reply, onChange }) => {
           <Text fontWeight={500} fontSize={14} additionalClass="text-d-blue-secondary">Não</Text>
         </Label>
       </Flex>
+      {mandatory && error && (
+        <Text additionalClass="text-red-500" fontSize={12}>
+          Obrigatório
+        </Text>
+      )}
     </Grid>
   );
 };
@@ -48,6 +53,8 @@ const AskRadioSelect = ({ ask, reply, onChange }) => {
 AskRadioSelect.propTypes = {
   ask: PropTypes.string.isRequired,
   reply: PropTypes.number,
+  mandatory: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
