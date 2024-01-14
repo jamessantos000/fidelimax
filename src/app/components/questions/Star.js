@@ -26,7 +26,7 @@ const AskStar = ({ ask, reply, mandatory, error, onChange }) => {
           Descrição da segunda pergunta, para ajudar o entendimento do usuário.
         </Text>
       </Grid>
-      <Flex additionalClass="justify-between text-center">
+      <Flex additionalClass="text-center gap-4">
         {[...Array(maxReply)].map((_, index) => (
           <StarIcon
             key={index}

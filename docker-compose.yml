@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  fidelimax-james:
+    build:
+      context: .
+      dockerfile: .Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/fidelimax
+
+  storybook-fidelimax-james:
+    build:
+      context: .
+      dockerfile: .Dockerfile
+    ports:
+      - "6006:6006"
+    command: yarn storybook dev -p 6006
+    volumes:
+      - .:/fidelimax

@@ -1,0 +1,225 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Configurando o projeto" />
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # Fidelimax - Perguntas dinâmicas
+
+    <p>Este arquivo fornece instruções para iniciar a aplicação e alguns insights sobre o desenvolvimento. Certifique-se de seguir as orientações abaixo para garantir uma inicialização suave e compreensão adequada do projeto.</p>
+
+{" "}
+
+<h2>Índice</h2>
+
+{" "}
+
+<ul>
+  <li>
+    <a href="#configuração-com-docker">Configuração com Docker</a>
+  </li>
+  <li>
+    <a href="#configuração-sem-docker">Configuração sem Docker</a>
+  </li>
+  <li>
+    <a href="#inicialização-do-storybook">
+      Storybook e Documentação de Componentes
+    </a>
+  </li>
+  <li>
+    <a href="#referências-e-tempo-de-projeto">Referências e Tempo de Projeto</a>
+  </li>
+  <li>
+    <a href="#abordagem-e-observações">Abordagem e Observações</a>
+  </li>
+</ul>
+
+{" "}
+
+<h3 id="configuração-com-docker">Configuração com Docker</h3>
+
+{" "}
+
+<ol>
+  <li>Abra o terminal no diretório raiz do projeto.</li>
+  <li>Execute o seguinte comando:</li>
+</ol>
+
+{" "}
+
+<p className="cod">
+  <pre>
+    <code>docker compose up -d</code>
+  </pre>
+</p>
+
+{" "}
+
+<p>Isso iniciará a aplicação em um ambiente Dockerizado.</p>
+
+{" "}
+
+<ol>
+  <li>Por padrão, o front-end irá iniciar na porta 3000</li>
+  <li>Por padrão, o storybook irá iniciar na porta 6006</li>
+</ol>
+
+{" "}
+
+<h3 id="configuração-sem-docker">Configuração sem Docker</h3>
+
+{" "}
+
+<h4>Inicialização do Front-end sem Docker</h4>
+
+{" "}
+
+<ol>
+  <li>Abra o terminal no diretório raiz do projeto.</li>
+  <li>Execute os seguintes comandos:</li>
+</ol>
+
+<p className="cod">
+  <pre>
+    <code>npm i</code>
+    <br />
+    <code>npm run start</code>
+  </pre>
+</p>
+
+{" "}
+
+<h3 id="inicialização-do-storybook">Inicialização do Storybook</h3>
+
+{" "}
+
+<p>
+  Para visualizar a documentação de componentes separadamente usando o
+  Storybook, siga as etapas abaixo:
+</p>
+
+{" "}
+
+<ol>
+  <li>Certifique-se de ter instalado todas as dependências do projeto.</li>
+  <li>Abra o terminal no diretório raiz do projeto.</li>
+  <li>Execute o seguinte comando:</li>
+</ol>
+
+{" "}
+
+<p className="cod">
+  <pre>
+    <code>npm run storybook</code>
+  </pre>
+</p>
+
+{" "}
+
+<p>
+  Isso iniciará o Storybook, proporcionando uma visualização interativa dos
+  componentes.
+</p>
+
+{" "}
+
+<h3 id="referências-e-tempo-de-projeto">Considerações de Desenvolvimento</h3>
+
+{" "}
+
+<p>
+  <strong>
+    O tempo total estimado para o projeto foi de aproximadamente 20 horas.
+  </strong>
+</p>
+<p>
+  A aplicação foi desenvolvida levando em consideração referências de tamanho,
+  distanciamento e informações do Figma.
+</p>
+<p>
+  Diversas abordagens foram exploradas durante o projeto para atingir os mesmos
+  resultados, demonstrando a capacidade de pensar de maneiras diferentes.
+</p>
+
+{" "}
+
+<h3 id="abordagem-e-observações">Observações Importantes</h3>
+
+{" "}
+
+<p>
+  <strong>
+    Na documentação, foram identificados 6 tipos de resposta, enquanto no Figma
+    há 7.
+  </strong>
+</p>
+<p>
+  A aplicação foi projetada considerando a menor resolução de smartphone
+  (420px).
+</p>
+
+  </div>
+</div>
+
+<style>
+  {`
+  h1 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #555;
+        }
+
+        h4 {
+            color: #555;
+        }
+
+        p {
+            color: #666;
+        }
+
+        ul, ol {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            color: #ff0000;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+        }
+        .cod {
+          color: #ff0000;
+        }
+
+        strong {
+            color: #000;
+        }
+  .sb-container {
+    margin-bottom: 48px;
+  }
+
+  .sb-section-title {
+    margin-bottom: 32px;
+  }
+  `}
+</style>
